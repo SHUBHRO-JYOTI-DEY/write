@@ -1,10 +1,11 @@
-var timeLimit = 18; // Set your time limit (in minutes)
+var timeLimit;
 var timeElapsed = 0;
 var timer;
 var isPaused = true;
 
 function startTimer() {
     if (isPaused) {
+        timeLimit = parseInt(document.getElementById('timeInput').value) || 18;
         isPaused = false;
         timer = setInterval(function() {
             if (!isPaused) {
@@ -36,7 +37,7 @@ function pad(val) {
 
 function updateWordCount() {
     var text = document.getElementById('textArea').value;
-    var words = text.trim().split(/\s+/).filter(function(word) {
+    var words = text.trim().split(/[\s.,!?]+/).filter(function(word) {
         // count only if the word is alphanumeric
         return /^[a-z0-9]+$/i.test(word);
     }).length;
