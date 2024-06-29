@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#timer, #wordCount {
+    text-align: center;
+    font-size: 20px;
+}
+
+textarea {
+    display: block;
+    width: 70%;
+    height: 800px;  /* adjust this value */
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+}
